@@ -6,29 +6,56 @@ body{
   width: 100%;
 }
 
+.relative-container{
+  position: relative;
+  width: 100%;
+  height: max-content;
+}
+
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  /* position the div in center */
+  ///* position the div in center */
   position: absolute;
-  top: 50%;
-  left: 50%;
+  //top: 50%;
+  //left: 50%;
   transform: translate(-50%, -50%);
+  margin: auto;
 }
 .background {
-
   height: 115vh;
-  width: 100%;
+  text-align: center !important;
+  vertical-align: center;
+  justify-content: center;
+  //width: 100%;
+  //position: absolute;
+}
+
+.circle-text-wrapper{
   position: absolute;
+  right:0;
+  left: 0;
+  width: 100%;
+  top:0;
+  text-align: center;
+  justify-content: center;
+  display: inline-grid !important;
+  bottom: 0;
+}
+
+.align-vertical {
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  vertical-align: center;
 }
 
 .inner-circle {
   zoom: 0.45;
   z-index: 3;
-
 }
 
 .outer-circle {
@@ -38,11 +65,11 @@ body{
 .middle-circle {
   zoom: 0.68;
   z-index: 4;
-
 }
 
 .rotate {
   animation: rotation 360s infinite linear;
+  position: relative !important;
 }
 
 .alt-rotate {

@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import { InfoSectionComponent } from './info-section/info-section.component';
 import { ParallaxDirective } from './parallax.directive';
 import { HomeCircularComponent } from './home-circular/home-circular.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoSectionComponent,
     ParallaxDirective,
-    HomeCircularComponent
+    HomeCircularComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

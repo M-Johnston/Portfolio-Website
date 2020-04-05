@@ -1,17 +1,28 @@
-<body>
-<div class="container" id="scene" data-relative-input="true" >
-  <div data-depth="0.4" class="circle-text-wrapper align-vertical">
-    <img [src]="'../assets/home/outer text layer.svg'" class="background rotate outer-circle" style="text-align: center">
-  </div>
-
-  <div data-depth="0.50"  class="circle-text-wrapper align-vertical">
-    <img [src]="'../assets/home/MIDDLE text layer.svg'" class="background alt-rotate middle-circle">
-  </div>
-
-  <div data-depth="0.60"  class="circle-text-wrapper align-vertical">
-    <img [src]="'../assets/home/inner text layer.svg'" class="background rotate inner-circle">
-  </div>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<!--custom menu-->
+<div class="button_container" id="toggle">
+  <span class="top"></span>
+  <span class="middle"></span>
+  <span class="bottom"></span>
 </div>
-</body>
+
+<div class="overlay" id="overlay">
+  <nav class="overlay-menu">
+    <ul>
+      <li ><a [routerLink]="'info'">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <body (wheel)="onScroll($event)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </body>
+</div>
 
 
