@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     $(document).ready(() => {
       $('#toggle').click(() => {
         console.log('click');
-        $().toggleClass('active');
+        $('#toggle').toggleClass('active');
         $('#overlay').toggleClass('open');
       });
     });

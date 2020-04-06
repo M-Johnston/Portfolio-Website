@@ -89,7 +89,7 @@ $button-width: 35px;
 
   &:before {
     content: '';
-    background: $color-main;
+    background: black;
     left: -55%;
     top: 0;
     width: 50%;
@@ -100,7 +100,7 @@ $button-width: 35px;
 
   &:after {
     content: '';
-    background: $color-main;
+    background: black;
     right: -55%;
     top: 0;
     width: 50%;
@@ -110,7 +110,7 @@ $button-width: 35px;
   }
 
   &.open {
-    opacity: .9;
+    opacity: .95;
     visibility: visible;
     height: 100%;
 
@@ -170,6 +170,7 @@ $button-width: 35px;
         color: $color-link;
         text-decoration: none;
         overflow: hidden;
+        font-family: Roboto;
 
         &:hover:after,
         &:focus:after,
@@ -177,17 +178,17 @@ $button-width: 35px;
           width: 100%;
         }
 
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0%;
-          transform: translateX(-50%);
-          height: 3px;
-          background: $color-link;
-          transition: .35s;
-        }
+        //&:after {
+        //  content: '';
+        //  position: absolute;
+        //  bottom: 0;
+        //  left: 50%;
+        //  width: 0%;
+        //  transform: translateX(-50%);
+        //  height: 30px;
+        //  background: $color-link;
+        //  transition: .35s;
+        //}
       }
     }
   }

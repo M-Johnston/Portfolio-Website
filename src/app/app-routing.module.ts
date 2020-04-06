@@ -6,7 +6,7 @@ import {HomeCircularComponent} from './home-circular/home-circular.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeCircularComponent,
     data: {title: 'Demo', animation: 'HomePage'}
   },

@@ -11,15 +11,15 @@
 <div class="overlay" id="overlay">
   <nav class="overlay-menu">
     <ul>
-      <li ><a [routerLink]="'info'">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Work</a></li>
+      <li ><a [routerLink]="''">Home</a></li>
+      <li><a [routerLink]="'info'" href="#">About Me</a></li>
+      <li><a href="#">Qualification</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
   </nav>
 </div>
 
-<div [@routeAnimations]="prepareRoute(outlet)">
+<div [@routeAnimations]="prepareRoute(outlet)" style="position: relative">
   <body (wheel)="onScroll($event)">
     <router-outlet #outlet="outlet"></router-outlet>
   </body>

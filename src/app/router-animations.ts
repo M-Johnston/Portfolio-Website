@@ -25,6 +25,17 @@ import {
 
 export const zoomIn =
   trigger('routeAnimations', [
+    // transition('* <=> *', [
+    //   query(':enter', [
+    //     style({
+    //       position: 'absolute',
+    //       left: 0,
+    //       width: '100%',
+    //       opacity: 0
+    //     })
+    //   ])
+    // ]),
+
     transition('HomePage => InfoPage', [
       style({position: 'relative'}),
       query(':enter, :leave', [
@@ -51,31 +62,32 @@ export const zoomIn =
             transform: 'scale(1)',
             top: 0
           }))
+      ])]),
+
+    transition('InfoPage => HomePage', [
+      style({position: 'relative'}),
+      query(':enter, :leave', [
+        style({
+          left: 0,
+          right: 0,
+          position: 'fixed', opacity: 0,
+          transform: 'scale(5)',
+          top: '50%',
+
+          // transform: 'scale(0)'
+        })
       ]),
-      // query(':enter', animateChild()),
-    ]),
-    // transition('* <=> FilterPage', [
-    //   style({ position: 'relative' }),
-    //   query(':enter, :leave', [
-    //     style({
-    //       position: 'absolute',
-    //       top: 0,
-    //       left: 0,
-    //       width: '100%'
-    //     })
-    //   ]),
-    //   query(':enter', [
-    //     style({  zoom: '5'})
-    //   ]),
-    //   query(':leave', animateChild()),
-    //   group([
-    //     query(':leave', [
-    //       animate('200ms ease-out', style({  zoom: '5'}))
-    //     ]),
-    //     query(':enter', [
-    //       animate('300ms ease-out', style({  zoom: '5'}))
-    //     ])
-    //   ]),
-    //   query(':enter', animateChild()),
-    // ])
+      query(':enter', animate('700ms cubic-bezier(1,.01,1,.53)',
+        style({
+          opacity: 1,
+          transform: 'scale(1)',
+          position: 'absolute',
+          display: 'flex',
+        }))),
+      query(':leave', [
+      animate('200ms ease',
+        style({
+          opacity: 0,
+          transform: 'scale(1)',}))
+    ])]),
   ]);
